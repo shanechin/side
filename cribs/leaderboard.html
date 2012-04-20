@@ -1,0 +1,31 @@
+<head>
+  <title>Dorms</title>
+</head>
+
+<body>
+<h1>Pick a Dorm!</h1>
+  <div id="outer">
+    {{> dormslist}}
+  </div>
+</body>
+
+<template name="dormslist">
+  <div class="dormslist">
+    {{#each dorms}}
+      {{> dorm }}
+    {{/each}}
+  </div>
+</template>
+
+<template name="dorm">
+	<div class ="dorm ">
+		<span class="name"> {{ name }} </span>
+	</div>
+</template>
+
+<template name="dorm_review">
+	{{#if any_dorm_selected }}
+	<span class="overall"> {{ overall }} </span>
+	{{/if}}
+</template>
+

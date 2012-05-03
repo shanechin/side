@@ -15,10 +15,33 @@ if (Meteor.is_client) {
   		return !Session.equals('dorm_id', null);
 	};
 	Template.dormslist.any_dorm_selected = any_dorm_selected;
-		
+	
+	/*Will refactor later*/
+	Template.dormslist.dorm1 = function () {
+		var dormCount = Dorms.find({}).count();
+		var listCount = dormCount/3;
+		var dormlist = Dorms.find({}).fetch();
+		return dormlist.slice(0,listCount);
+	};
+	Template.dormslist.dorm2 = function () {
+		var dormCount = Dorms.find({}).count();
+		var listCount = dormCount/3;
+		var dormlist = Dorms.find({}).fetch();
+		return dormlist.slice(listCount,listCount*2);
+	};
+
+	Template.dormslist.dorm3 = function () {
+		var dormCount = Dorms.find({}).count();
+		var listCount = dormCount/3;
+		var dormlist = Dorms.find({}).fetch();
+		return dormlist.slice(listCount*2,dormCount);
+	};
+
+
 	Template.dormslist.dorms = function () {
 		return Dorms.find({});
 	};
+	
 	
 	Template.dorm.selected = function(){
  		return Session.equals("selected_dorm",this._id)?"selected":'';
@@ -90,8 +113,7 @@ if (Meteor.is_server) {
 	Meteor.publish('reviews', function(dorm_id){
     	return Reviews.find({dorm_id:dorm_id});
 	});
-	var dorms = 
-		["Claremont",
+	var dorms = ["Claremont",
 		"548 W 113th", 
 		"600 West 113th",
 		"Broadway",

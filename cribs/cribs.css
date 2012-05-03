@@ -1,13 +1,17 @@
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, san-serif;
-    font-weight: 200;
-    margin: 50px 0;
-    padding: 0;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+
+
+.logo{
+	font-family: 'Jolly Lodger', cursive;
+	text-align:center;
+}
+
+.logo.large{
+	font-size:84px;
+}
+
+.logo.home{
+	margin-top:50px;
+	margin-bottom:50px;
 }
 
 #outer {
@@ -21,7 +25,6 @@ body {
 
 .dorm .name {
     display: inline-block;
-    width: 300px;
     font-size: 1.75em;
 }
 
@@ -32,6 +35,10 @@ body {
     font-size: 2em;
     font-weight: bold;
     color: #777;
+}
+
+.star{
+	background: url('/star-on.png') no-repeat 0 0;
 }
 
 .dorm.selected {

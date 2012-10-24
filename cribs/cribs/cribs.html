@@ -4,16 +4,25 @@
 
 <body>
   {{> dormlist}}
+  {{> review }}
 </body>
 
 <template name="dormlist">
+ <div class=" {{hidden}} ">
   This is just a test!!!
   {{#each dorms}}
   	{{> dorm}}
   {{/each}}
+  </div>
 </template>
 
 
 <template name="dorm">
 	<span class="name">{{name}}</span>
+</template>
+
+<template name="review">
+	<div class="{{hidden}}">
+		Another test man...
+	</div>
 </template>

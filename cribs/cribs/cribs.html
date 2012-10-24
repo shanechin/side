@@ -1,0 +1,19 @@
+<head>
+  <title>cribs</title>
+</head>
+
+<body>
+  {{> dormlist}}
+</body>
+
+<template name="dormlist">
+  This is just a test!!!
+  {{#each dorms}}
+  	{{> dorm}}
+  {{/each}}
+</template>
+
+
+<template name="dorm">
+	<span class="name">{{name}}</span>
+</template>
